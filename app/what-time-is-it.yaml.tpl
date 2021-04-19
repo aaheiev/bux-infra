@@ -51,14 +51,14 @@ metadata:
   namespace: demo
   annotations:
     kubernetes.io/ingress.class: nginx
-    cert-manager.io/issuer:      letsencrypt-staging
+    cert-manager.io/issuer:      letsencrypt-prod
 spec:
   tls:
     - hosts:
-        - what-time-is-it.asg12.casual-trading.com
+        - what-time-is-it.${domain_name}
       secretName: what-time-is-it-asg12
   rules:
-    - host: what-time-is-it.asg12.casual-trading.com
+    - host: what-time-is-it.${domain_name}
       http:
         paths:
           - path: /

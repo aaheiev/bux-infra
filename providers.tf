@@ -1,19 +1,18 @@
 provider google {
-  project     = var.project_id
-  region      = var.region
+  project       = var.project_id
+  region        = var.region
 }
 
 provider google-beta {
-  project     = var.project_id
-  region      = var.region
+  project       = var.project_id
+  region        = var.region
 }
-# The Helm provider
-provider "helm" {
+
+provider helm {
   kubernetes {
     config_path = "kubeconfig-${var.env}"
   }
 }
-
-# The Null Provider
-//provider null {
-//}
+provider kubernetes {
+  config_path   = "kubeconfig-${var.env}"
+}

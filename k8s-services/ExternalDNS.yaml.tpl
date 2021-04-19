@@ -53,8 +53,8 @@ spec:
           image: k8s.gcr.io/external-dns/external-dns:v0.7.6
           args:
             - --source=ingress
-            - --domain-filter=asg12.casual-trading.com
+            - --domain-filter=${domain_name}
             - --provider=google
-            - --google-project=bux-assignment-aaheiev
+            - --google-project=${project_id}
             - --registry=txt
             - --txt-owner-id=my-identifier
